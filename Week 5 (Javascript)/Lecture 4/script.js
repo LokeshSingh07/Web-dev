@@ -280,6 +280,10 @@ for(let value of arr){
 console.log(total);
 
 
+
+
+
+// ------ accumulator 
 let accuSum = arr.reduce((accumulator, currentValue)=> accumulator+currentValue, 0);
 console.log(accuSum);
 
