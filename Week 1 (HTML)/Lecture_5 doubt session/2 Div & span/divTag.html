@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division tag</title>
+    <style>
+        body{
+            height: 100vw;
+        }
+        div{
+            background-color: aqua;
+            margin: 10px;
+
+            /* display: inline; */
+        }
+
+        .change{
+            display: block;
+        }
+
+        div span{
+            background-color: red;
+
+            /* display: block; */
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- ____ div tag _____ -->
+    <div>
+        This is container (explicitly declared (display: inline) check comment on line 13
+    </div>
+
+
+    <div>
+        This is div (explicitly declared (display: inline)
+    </div>
+
+
+
+    <!-- ____ span tag ____ -->
+    <div class="change">
+        <span>This is span tag</span>
+        <span>This is span tag</span>
+    </div>
+
+
+
+
+
+
+    <div class="change">
+        <p>
+            <strong> div </strong>(means Division tag) and <strong> span</strong> both are Non-semantic 
+        </p>
+        <p>
+            Div tag cover full horizontal space ___ (By default display property is set to block in div tag)
+            <br>
+            Whereas span cover only required amount of space (By default display property is set to inline)
+        </p>
+    </div>
+
+
+    
+</body>
+</html>

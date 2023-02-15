@@ -1,0 +1,41 @@
+.container{
+    width: 100vw;
+    height: 90vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;        /* Horizontal */
+    align-items: center;            /*vertical*/
+    gap: 20px;                      /* for gap between flex-items */
+}
+
+#box1{
+    width: 200px;
+    height: 200px;
+    border: 2px  solid black;
+    background-image: linear-gradient(red,blue);
+    background-image: linear-gradient(to bottom right, green, blue );
+    background-image: linear-gradient(to top left, orange, red);
+    background-image: linear-gradient(-19deg, orange, hotpink);
+}
+
+
+
+#box2{
+    width: 200px;
+    height: 200px;
+    border: 2px  solid black;
+    background-image: radial-gradient(rgb(255, 94, 0), rgb(112, 224, 111));
+    background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+
+#box3{
+    width: 200px;
+    height: 200px;
+    border: 2px  solid black;
+    background-image: conic-gradient(red, yellow,green, blue, black);
+}
+
+
+
+

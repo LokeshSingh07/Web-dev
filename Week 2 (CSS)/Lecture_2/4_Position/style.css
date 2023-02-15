@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 130vh;
+    background-color: rgb(110, 254, 220);
+    padding: 100px;
+}
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(246, 242, 37);
+    margin: 10px;
+    padding: 30px 0px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+#box1{
+    position: relative;
+    top: 40px;
+    background-color: red;
+}
+
+#box2{
+    position: fixed;
+    background-color: royalblue;
+}
+
+#box3{
+    position: absolute;
+    top: 5px;
+    left: 5px; 
+    background-color: greenyellow;
+}
+
+#box4{
+    position: sticky;
+    top: 0px;
+    background-color: cyan;
+}
+
+
+
+
+
+/* ================================================================================================ */
+
+
+
+
+
+
+/* ___ Position text in all corners && centre of an image ____ */
+
+.demo{
+    width: 90vw;
+    height: 90vh;
+    background-color: rgb(79, 223, 255);
+    position: relative;
+    margin-top: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#tx1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#tx2{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#tx3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#tx4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+div img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+
+
+
+
+

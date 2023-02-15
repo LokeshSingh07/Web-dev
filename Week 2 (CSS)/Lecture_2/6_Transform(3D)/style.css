@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 100px;
+}
+
+
+
+#translate{
+    transform: perspective(10px) translateZ(-10px);
+}
+#scale{
+    transform: perspective(400px) scaleZ(5) rotateX(45deg) ;
+}
+
+
+
+
+
+
+
+
+

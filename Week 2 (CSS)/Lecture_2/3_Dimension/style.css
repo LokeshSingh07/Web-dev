@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    border: 2px solid rgb(225, 53, 53);
+    margin: 60px 10px;
+    padding: 10px;
+    background-color: rgb(77, 173, 229);
+}
+
+.box1{
+    max-height: 100px;
+    overflow: scroll;
+}
+
+
+.box2{
+    min-height: 150px;
+    /* overflow: scroll; */
+}
+
+.box3{
+    max-height: 100px;
+}
+
+
+.box4{
+    min-height: 100px;
+}
+
+
+.box5{
+    height: 50px;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+

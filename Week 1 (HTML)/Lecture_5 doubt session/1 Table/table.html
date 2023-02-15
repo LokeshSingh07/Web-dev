@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+
+        table,tr,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+    <table>
+        <caption>TO create an nested table</caption>
+        <thead>
+            <tr>
+                <th rowspan="3">Day</th>
+                <th colspan="3">Seminar</th>
+            </tr>
+            <tr>
+                <th colspan="2">Scedule</th>
+                <th rowspan="2">topic</th>
+            </tr>
+            <tr>
+                <th>Begin</th>
+                <th>End</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td rowspan="2">8:00 a.m</td>
+                <td rowspan="2">5:00 p.m</td>
+                <td>Introduction to Xml</td>
+            </tr>
+            <tr>
+                <td>Validity DTD and Relax no</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Tuesday</td>
+                <td>8:00 a.m</td>
+                <td>11:00 p.m</td>
+                <td>X Path</td>
+            </tr>
+            <tr>
+                <td>11:00 a.m</td>
+                <td>2:00 p.m</td>
+                <td>XSL transformation</td>
+            </tr>
+            <tr>
+                <td>2:00 p.m</td>
+                <td>5:00 p.m</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>8:00 a.m</td>
+                <td>12:00 p.m</td>
+                <td>XSL formatting object</td>
+            </tr>
+
+
+        </tbody>
+
+        <tfoot>
+
+        </tfoot>
+
+    </table>
+
+
+
+    
+</body>
+</html>

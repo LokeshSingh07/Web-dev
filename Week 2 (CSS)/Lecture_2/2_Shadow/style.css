@@ -1,0 +1,23 @@
+*{
+    margin: 50px;
+}
+
+.text{
+    text-shadow: 2px 2px 5px red;
+}
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    border: 2px solid rgb(111, 150, 150);
+    border-radius: 10px;
+    background-color: rgb(212, 255, 255);
+    box-shadow: 2px 2px 5px rgb(111, 150, 150), -2px -2px 5px rgb(111, 150, 150);
+}
+
+
+

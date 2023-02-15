@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    padding: 50px;
+    background-color: azure;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 20px;
+    display: inline-block;
+}
+
+
+
+#translate{
+    transform: translate(-10px, -10px);
+}
+#rotate{
+    transform: rotate(40deg);
+}
+#scale{
+    transform: scale(1.5);
+}
+#skew{
+    transform: skew(20deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
