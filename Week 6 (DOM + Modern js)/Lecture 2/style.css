@@ -1,0 +1,15 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    text-decoration: none;
+    border: 1px solid rgb(0, 179, 255);
+    background-color: rgb(10,181,255);
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+article{
+    margin-top: 5rem;
+}
