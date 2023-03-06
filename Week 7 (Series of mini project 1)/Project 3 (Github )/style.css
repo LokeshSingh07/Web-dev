@@ -1,6 +1,6 @@
 :root {
     --lm-bg: #f6f8ff;
-    --lm-bg-content: #fefefe;
+    --lm-bg-content: #fefefec5;
     --lm-text: #4b6a9b;
     --lm-text-alt: #2b3442;
     --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
@@ -9,13 +9,17 @@
     /* Btn */
     --btn: #0079ff;
     --btn-hover: #60abff;
+
+    --bx-shadow : rgb(228, 228, 228,0.5);
+    --bx-bg: rgba(149, 234, 249, 0.2);
   }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Space Mono", monospace;
+    /* font-family: "Space Mono", monospace; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -23,11 +27,16 @@
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    background-color: aliceblue;
+    background-color: rgba(181, 220, 255, 0.7);
 }
+a{
+    text-decoration: none;
+}
+
 .hero{
-    width: 750px;
-    height: 100vh;
+    width: 850px;
+    min-height: 100vh;
+    height: 100%;
     margin: 0 auto;
     padding: 3rem 2rem;
 }
@@ -74,4 +83,177 @@
 }
 .input-container button:hover{
     background-color: var(--btn-hover);
+}
+
+
+
+.user-container{
+    width: 100%;
+    margin: 3rem 0;
+    padding: 1.4rem 4rem 2rem 2rem;
+    position: relative;
+    display: none;
+    justify-content: space-between;
+    background-color: var(--lm-bg-content);
+    border-radius: 20px;
+}
+.user-container.active{
+    display: flex;
+}
+.left-section{
+    width: 140px;
+    height: 100%;
+    position: relative;
+}
+.user-img{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 1.3rem;
+    left: 10%;
+    border-radius: 50%;
+}
+
+.right-section{
+    width: calc(100% - 180px);
+}
+
+.login-details{
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.gitHub-user{
+    width: 100%;
+    height: 100%;
+}
+.gitHub-user p:first-of-type{
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 15px;
+    padding: 5px 0;
+}
+.gitHub-user a{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.date-joined{
+    width: 100%;
+}
+.date-joined p[created-at]{
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: right;
+}
+
+
+.bio-section{
+    width: 100%;
+    min-height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.bio-section p[bio-details]{
+    font-size: 17px;
+    font-weight: 400;
+    list-style: 15px;
+    line-height: 25px;
+    word-spacing: 3px;
+    opacity: 0.7;
+}
+
+.repo-details{
+    width: 100%;
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bx-bg);
+    box-shadow: 0px 0px 10px var(--bx-shadow);
+    border-radius: 10px;
+    margin-block: 2rem 1.5rem;
+}
+.repo{
+    width: 24%;
+}
+.repo p{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.repo p[public-repo]{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+}
+.followers{
+    width: 32%;
+}
+.followers p{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.followers p[followers]{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+}
+.following{
+    width: 32%;
+}
+.following p{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.following p[following]{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+
+.social-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.social-content{
+    width: 45%;
+    min-height: 60px;
+    background-color: var(--bx-bg);
+    box-shadow: 0px 0px 10px var(--bx-shadow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+}
+.social-content i{
+    font-size: 18px;
+    margin: auto;
+}
+.social-content a,p{
+    width: 90%;
+    font-size: 15px;
+    word-wrap: break-word;
+    padding-left: 15px;
 }
