@@ -26,7 +26,7 @@ exports.createTag = async (req,res)=>{
 
         // return response
         return res.status(200).json({
-            success: false,
+            success: true,
             message: "Tag created successfully",
             data: tagDetails,
         });
@@ -54,7 +54,7 @@ exports.showAllTags = async (req,res)=>{
                 
         // return response
         return res.status(200).json({
-            success: false,
+            success: true,
             message: "All Tags returned successfully",
             tagDetails,
         });
