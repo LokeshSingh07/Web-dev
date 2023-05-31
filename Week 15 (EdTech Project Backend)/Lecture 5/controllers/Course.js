@@ -55,6 +55,7 @@ exports.createCourse = async(req,res)=>{
             instructor: instructorDetails._id,
             whatYouWillLearn: whatYouWillLearn,
             price,
+            tag: tag,
             category: categoryDetails._id,
             thumbnail: thumbnailImage.secure_url,
         });
@@ -71,8 +72,7 @@ exports.createCourse = async(req,res)=>{
             {new: true}
         );
         
-        // Add course entry in Category Schema
-        // TODO --> HW
+        // TODO [HW] --> Add course entry in Category Schema
         // const categoryId = await findById(category);
         await Category.findByIdAndUpdate(
             {_id: categoryDetails._id},
@@ -112,7 +112,7 @@ exports.createCourse = async(req,res)=>{
 
 
 // getAllCourse handler function
-exports.showAllCourses = async (req,res)=>{
+exports.getAllCourses = async (req,res)=>{
     try{
         const allCourses = await Course.find({},
             {
@@ -142,3 +142,12 @@ exports.showAllCourses = async (req,res)=>{
         });
     }
 }
+
+
+
+
+
+
+
+
+// getCoursesDetails handler function

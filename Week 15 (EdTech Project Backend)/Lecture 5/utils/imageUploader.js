@@ -2,7 +2,7 @@ const cloudinary = require("cloudinary").v2;
 
 
 
-exports.uploadImageToCloudinary = async(file, floder, height, quality)=>{
+exports.uploadImageToCloudinary = async(file, folder, height, quality)=>{
     try{
         const options = {folder};
 
@@ -22,7 +22,6 @@ exports.uploadImageToCloudinary = async(file, floder, height, quality)=>{
             message: "Error in sending file to cloudinary",
         })
     }
-
 
 
 }

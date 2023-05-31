@@ -75,7 +75,7 @@ exports.capturePayment = async(req,res)=>{
 
         // return response
         return res.status(200).json({
-            success: false,
+            success: true,
             courseName: course.courseName,
             courseDescription : course.courseDescription,
             thumbnail: course.thumbnail,
@@ -180,7 +180,4 @@ exports.verifySignature = async(req,res)=>{
         })
     }
 
-
-
-
-}
+};

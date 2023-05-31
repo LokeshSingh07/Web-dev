@@ -55,6 +55,8 @@ exports.updateProfile = async (req,res)=>{
 // Delete account handler
 exports.deleteAccount = async(req,res)=>{
     try{
+        // TODO  --> Find more on Job Schedule
+        
         // get id
         const id = req.user.id;
         
@@ -123,3 +125,4 @@ exports.getAllUserDetails = async(req,res)=>{
 
 
 
+// updateDiplayPicture handler function

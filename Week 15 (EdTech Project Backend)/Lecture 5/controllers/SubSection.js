@@ -42,6 +42,8 @@ exports.createSubSection = async(req,res)=>{
             {new: true}
         )
         // HW -> log updated section here, after adding populate query
+        .populate("subSection")
+        .exec();
         
         // return response
         return res.status(200).json({
@@ -124,7 +126,7 @@ exports.deleteSubSection = async(req,res)=>{
         const {subSectionId} = req.params;
         
         // use findByIdAndDelete
-        await findByIdAndDelete(subSectionId);
+        await subSection.findByIdAndDelete(subSectionId);
 
         // return response
         return res.status(200).json({

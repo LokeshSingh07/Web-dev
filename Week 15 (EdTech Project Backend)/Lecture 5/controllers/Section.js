@@ -32,6 +32,13 @@ exports.createSection = async(req, res)=>{
             {new: true},    
         )
         // TODO  -> use populate to replace secion/subSection both in the updatedCourseDetails
+        .populate({
+            path: "courseContent",
+            populate: {
+                path: "subSection",
+            }
+        })
+        .exec();
         
         // return response
         return res.status(200).json({
@@ -73,7 +80,6 @@ exports.updateSection = async(req,res)=>{
         // Update the data 
         const updatedDetails = await Section.findByIdAndUpdate(sectionId, {sectionName}, {new: true});
 
-
         // return response
         return res.status(200).json({
             success: true,
@@ -103,7 +109,7 @@ exports.deleteSection = async(req,res)=>{
         const {sectionId} = req.params;
         
         // use findByIdAndDelete
-        await findByIdAndDelete(sectionId);
+        await Section.findByIdAndDelete(sectionId);
         // RODO[Testing] --> Do we need to delete the entry from the course schema
 
         // return response

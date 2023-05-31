@@ -19,7 +19,7 @@ exports.resetPasswordToken = async(req,res)=>{
         }
 
         // generate Token
-        const token = crypto.randomUUID();
+        const token = crypto.randomBytes(20).toString("hex");
 
         // update user by adding token and expiration time
         const updatedDetails = await User.findOneAndUpdate({email: email}, 
@@ -65,7 +65,7 @@ exports.resetPassword = async(req, res)=>{
         if(password !== confirmPassword){
             return res.status(400).json({
                 success: false,
-                message : "Password not matching",
+                message : "Password and confirm password does not matching",
             });
         }
     
@@ -108,7 +108,7 @@ exports.resetPassword = async(req, res)=>{
     }
     catch(err){
         console.error(err);
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             message: "Something went wrong while reset password",
         });

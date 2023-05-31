@@ -12,11 +12,10 @@ const categorySchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    course: {
+    course: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course",
-        required: true,
-    },
+    }],
 
 
 });
