@@ -10,8 +10,11 @@ const {uploadImageToCloudinary} = require("../utils/imageUploader");
 // createCourse handler function
 exports.createCourse = async(req,res)=>{
     try{
+        // Get userId from request object
+        const userId = req.user.id;
+
         // fetch data from req body
-        const {courseName, courseDescription, whatYouWillLearn, price, category, tag, status, instructions} = req.body;
+        let {courseName, courseDescription, whatYouWillLearn, price, category, tag, status, instructions} = req.body;
 
         // fetch file
         const thumbnail = req.files.thumbnailImage;
@@ -50,7 +53,7 @@ exports.createCourse = async(req,res)=>{
         }
         
         // Image --> clodinary
-        const thumbnailImage = await uploadImageToCloudinary(thumbnailImage, process.env.FOLDER_NAME);
+        const thumbnailImage = await uploadImageToCloudinary(thumbnail, process.env.FOLDER_NAME);
         
         // create an entry for new course 
         const newCourse = await Course.create({

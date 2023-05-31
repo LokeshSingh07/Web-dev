@@ -38,7 +38,6 @@ exports.updateProfile = async (req,res)=>{
         return res.status(200).json({
             success: true,
             message: "Profile updated successfully",
-            profile,
         })
 
     }
@@ -111,7 +110,7 @@ exports.deleteAccount = async(req,res)=>{
 exports.getAllUserDetails = async(req,res)=>{
     try{
         // get id
-        const id = user.id;
+        const id = req.user.id;
 
         // validation and get user details
         const userDetails = await User.findById(id).populate("additionalDetails").exec();
@@ -119,7 +118,8 @@ exports.getAllUserDetails = async(req,res)=>{
         // return response
         return res.status(200).json({
             success: true,
-            message: "User data fetched successfully"
+            message: "User data fetched successfully",
+            data: userDetails,
         });
     }
     catch(err){

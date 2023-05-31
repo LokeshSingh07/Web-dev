@@ -21,7 +21,7 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    couseContent: [{
+    courseContent: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Section",
         required: true,
