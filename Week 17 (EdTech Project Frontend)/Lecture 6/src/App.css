@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html,body{
+    overflow-x: hidden;
+}
+
+ /* Works on Firefox */
+ * {
+   scrollbar-width: thin;
+   scrollbar-color: #afb2bf #000814;
+ }
+ 
+ /* Works on Chrome, Edge, and Safari */
+ *::-webkit-scrollbar {
+   width: 5px;
+ }
+ 
+ *::-webkit-scrollbar-track {
+   background: #000814;
+ }
+ 
+ *::-webkit-scrollbar-thumb {
+   background-color: #afb2bf;
+   border-radius: 20px;
+   border: 1px solid #000814;
+ }
+
+
+
+
+
+
+
+
+.homepage_bg {
+    background-image: url("../src/assets/Images/bghome.svg");
+}
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#474bff 94%,#0000) top/9px 9px no-repeat,
+           conic-gradient(#0000 30%,#474bff);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+ }
+ 
+ @keyframes spinner-c7wet2 {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
+
+
+
+
+
+ .label-style{
+    @apply text-[14px] text-richblack-5;
+ }
+ .form-style{
+    @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+ }
+
+
