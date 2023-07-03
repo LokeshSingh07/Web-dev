@@ -1,0 +1,108 @@
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import Spinner from '../../common/Spinner';
+import ProgressBar from '@ramonak/react-progress-bar';
+import { getUserEnrolledCourses } from '../../../services/operations/profileAPI';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+
+const EnrolledCourse = () => {
+
+    const navigate = useNavigate();
+    const {token} = useSelector((state)=> state.auth);
+    const [enrolledCourses, setEnrolledCourses] = useState('');
+
+
+
+    const getEnrolledCourses = async()=>{
+        try{
+            const response = await getUserEnrolledCourses(token);
+            setEnrolledCourses(response);
+        }
+        catch(err){
+            console.log("Unable to Fetch enrolled courses");
+        }
+    }
+
+
+
+    useEffect(()=>{
+        getEnrolledCourses();
+    },[])
+
+
+  return (
+    <div className='text-richblack-5'>
+        <div className='text-3xl'>Enrolled Courses</div>
+
+        {
+            !enrolledCourses ? 
+            (<Spinner/>) : 
+            (
+                !enrolledCourses.length ? 
+                (<p className='grid place-content-center h-[10vh]'>
+                    You have not enrolled in any course yet
+                </p>) : 
+                (<div className='flex flex-col gap-5 md:gap-0 my-8'>
+                    <div className='hidden md:flex rounded-t-lg bg-richblack-600'>
+                        <p className='md:w-[45%] px-5 py-3'>Course Name</p>
+                        <p className='md:w-1/4 px-2 py-3'>Durations</p>
+                        <p className='md:flex-1 px-2 py-3'>Progress</p>
+                    </div>
+                    {
+                        enrolledCourses.map((course, index, arr)=>(
+                            <div key={index} 
+                                className={`flex flex-col md:flex-row md:items-center border border-richblack-700 ${
+                                    index === arr.length-1 ? "rounded-b-lg" : "rounded-none"
+                                } py-4 md:py-1`}
+                            >
+                                <div  
+                                    onClick={()=> {
+                                        navigate(`/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/sub-section/${course.courseContent?.[0]?.subSection?.[0]?._id}`)
+                                    }}
+                                    className='md:w-[45%] flex items-center cursor-pointer gap-4 px-2 md:px-5 py-3'
+                                >
+                                    <img src={course.thumbnail} className="w-[50px] h-[50px] rounded-lg object-cover"/>
+                                    <div className='flex flex-col gap-1'>
+                                        <p className='font-semibold'>{course.courseName}</p>
+                                        <p className='text-xs text-richblack-300'>
+                                            {course.courseDescription.length > 50 
+                                                ? `${course.courseDescription.slice(0, 50)}...`
+                                                : course.courseDescription 
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div className='md:w-1/4 px-2 py-3'>
+                                    {course?.totalDuration}
+                                </div>
+
+                                <div className='flex flex-col md:w-1/5 gap-2 px-2 py-3'>
+                                    <p>Progress : {course.progressPercentage || 0}%</p>
+                                    <ProgressBar
+                                        completed={course.progressPercentage || 0}
+                                        height='8px'
+                                        isLabelVisible={false}
+                                        baseBgColor="#D3D3D3"
+                                        bgColor="#1E90FF"
+                                    />
+                                </div>
+
+                            </div>
+                        ))
+                    }
+                </div>)
+            )
+        }
+
+    </div>
+  )
+}
+
+export default EnrolledCourse
